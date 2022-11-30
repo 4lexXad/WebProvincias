@@ -36,6 +36,11 @@ $routes->set404Override();
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
+$routes->get('Provincia-listar', 'Provincia::list');
+$routes->get('Provincia-agregar', 'Provincia::add');
+$routes->post('Provincia-guardar', 'Provincia::save');
+$routes->get('Provincia-edicion', 'Provincia::edition');
+$routes->get('Provincia-eliminar', 'Provincia::delete');
 
 /*
  * --------------------------------------------------------------------
