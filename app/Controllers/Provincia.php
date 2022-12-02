@@ -38,11 +38,11 @@ class Provincia extends BaseController
             ])->withInput();
         }
 
-        $tamaño = $_FILES['IMAGE']['size'];
-        $imagenSubida = fopen($_FILES['IMAGE']['tmp_name'], 'r');
-        $_POST["IMAGE"] = fread($imagenSubida, $tamaño);
-
-        
+        if (!empty($_FILES['IMAGE']['size'])) {
+            $tamaño = $_FILES['IMAGE']['size'];
+            $imagenSubida = fopen($_FILES['IMAGE']['tmp_name'], 'r');
+            $_POST["IMAGE"] = fread($imagenSubida, $tamaño);
+        }
 
         if (!empty($_GET["ID"])) {
             if ($guardar->where('ID_PROVINCIA', $_GET["ID"])->first() > 1) $guardar->update($_GET['ID'], $_POST);

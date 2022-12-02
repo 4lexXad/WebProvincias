@@ -14,11 +14,7 @@
 
     <?=$this->renderSection('style')?>
 
-<<<<<<< HEAD
-    <title>Suyaya<?=$this->renderSection('title')?></title>
-=======
     <title>Suyay Restaurant<?=$this->renderSection('title')?></title>
->>>>>>> edith
 
 </head>
 <body>
